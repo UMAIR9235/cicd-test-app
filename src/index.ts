@@ -12,7 +12,7 @@ app.get("/health", (req, res) => {
 app.get("/users", (req, res) => {
   res.json({
     name: "umair",
-    age: "21",
+    age: "24",
   });
 });
 
