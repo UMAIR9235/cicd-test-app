@@ -1,4 +1,21 @@
-console.log("hello");
+import express from "express";
 
-console.log("Testing workflow");
-console.log("Testing workflow2");
+const PORT = 3000;
+const app = express();
+
+app.use(express.json());
+
+app.get("/health", (req, res) => {
+  res.send("<h1>Server is Healthyyy</h1>");
+});
+
+app.get("/users", (req, res) => {
+  res.json({
+    name: "umair",
+    age: "21",
+  });
+});
+
+app.listen(PORT, () => {
+  console.log(`Server started on ${PORT}.`);
+});
